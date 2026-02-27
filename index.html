@@ -1,12 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publisher Page</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Publisher Page</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <!-- Logo -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="" />
+                    <h3>SkillDive</h3>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="content">
+                <ul class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Programs</a></li>
+                    <li class="active">Bootcamp List</li>
+                </ul>
+                <h1>Bootcamp List</h1>
+
+                <div class="action-bar">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search bootcamp..." />
+                    </div>
+
+                    <button class="btn-primary">+ Add Programs</button>
+                </div>
+            </main>
+        </div>
+    </body>
 </html>
