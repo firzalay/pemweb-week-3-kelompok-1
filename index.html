@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,11 +8,11 @@
         <!-- CSS -->
         <link rel="stylesheet" href="assets/css/style.css" />
         <!-- Logo -->
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=edit" />
     </head>
+
     <body>
         <div class="container">
             <aside class="sidebar">
@@ -44,7 +45,53 @@
 
                     <button class="btn-primary">+ Add Programs</button>
                 </div>
+
+                <div class="table-container">
+                    <table class="bootcamp-table">
+                        <thead>
+                            <tr>
+                                <th>Nama Bootcamp</th>
+                                <th>Durasi</th>
+                                <th>Tingkat</th>
+                                <th>Harga</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fullstack Web Development</td>
+                                <td>3 Bulan</td>
+                                <td>Dasar</td>
+                                <td>Rp 3.000.000</td>
+                                <td>
+                                    <span class="material-symbols-outlined edit-icon">edit</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>UI/UX Design</td>
+                                <td>2 Bulan</td>
+                                <td>Menengah</td>
+                                <td>Rp 2.500.000</td>
+                                <td>
+                                    <span class="material-symbols-outlined edit-icon">edit</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Data Science Intensive</td>
+                                <td>4 Bulan</td>
+                                <td>Lanjutan</td>
+                                <td>Rp 4.500.000</td>
+                                <td>
+                                    <span class="material-symbols-outlined edit-icon">edit</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </div>
     </body>
+
 </html>
