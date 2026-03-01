@@ -33,11 +33,19 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const bootcampData = {
-        title: document.getElementById("title").value,
-        duration: document.getElementById("duration").value,
+        title: document.getElementById("title").value.trim(),
+        duration: document.getElementById("duration").value.trim(),
         level: document.getElementById("level").value,
-        price: Number(document.getElementById("price").value)
+        price: Number(document.getElementById("price").value),
+        type: document.getElementById("type").value.trim(),
+        benefit: document.getElementById("benefit").value.trim(),
+        description: document.getElementById("description").value.trim(),
+        mentor: document.getElementById("mentor").value.trim(),
     };
+
+    if (!validateBootcamp(bootcampData)) {
+        return;
+    }
 
     if (editIndex === null) {
         bootcamps.push(bootcampData);
@@ -100,6 +108,38 @@ function renderTable() {
 
         tableBody.appendChild(tr);
     });
+}
+
+function validateBootcamp(data) {
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const textRegex = /[A-Za-z]/;
+
+    if (!nameRegex.test(data.title)) {
+        alert("Nama bootcamp hanya boleh berisi huruf dan spasi.");
+        return false;
+    }
+
+    if (!nameRegex.test(data.mentor)) {
+        alert("Nama mentor hanya boleh berisi huruf dan spasi.");
+        return false;
+    }
+
+    if (data.price <= 0 || isNaN(data.price)) {
+        alert("Harga harus lebih dari 0.");
+        return false;
+    }
+
+    if (!textRegex.test(data.duration)) {
+        alert("Durasi harus mengandung teks (contoh: 3 Bulan).");
+        return false;
+    }
+
+    if (data.type.trim() === "" || data.benefit.trim() === "" || data.description.trim() === "") {
+        alert("Semua field harus diisi.");
+        return false;
+    }
+
+    return true;
 }
 
 renderTable();
