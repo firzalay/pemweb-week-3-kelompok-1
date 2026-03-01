@@ -74,6 +74,18 @@ function editBootcamp(index) {
     modal.style.display = "flex";
 }
 
+function deleteBootcamp(index) {
+    const confirmDelete = confirm("Yakin ingin menghapus bootcamp ini?");
+
+    if (!confirmDelete) return;
+    
+    bootcamps.splice(index, 1)
+
+    saveToLocalStorage()
+    renderTable()
+
+}
+
 function renderTable() {
     tableBody.innerHTML = "";
 
@@ -98,12 +110,18 @@ function renderTable() {
             <td>Rp ${bootcamp.price.toLocaleString("id-ID")}</td>
             <td>
                 <span class="material-symbols-outlined edit-icon" style="cursor:pointer;">edit</span>
+                <span class="material-symbols-outlined delete-icon" style="cursor:pointer">delete</span>
             </td>
         `;
 
         const editBtn = tr.querySelector(".edit-icon");
         editBtn.addEventListener("click", function () {
             editBootcamp(index);
+        });
+
+        const deleteBtn = tr.querySelector(".delete-icon");
+        deleteBtn.addEventListener("click", function () {
+            deleteBootcamp(index);
         });
 
         tableBody.appendChild(tr);
