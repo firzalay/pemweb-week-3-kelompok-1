@@ -43,7 +43,7 @@
                         <input type="text" placeholder="Search bootcamp..." />
                     </div>
 
-                    <button class="btn-primary">+ Add Programs</button>
+                    <button class="btn-primary" id="openModal">+ Add Programs</button>
                 </div>
 
                 <div class="table-container">
@@ -57,41 +57,73 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fullstack Web Development</td>
-                                <td>3 Bulan</td>
-                                <td>Dasar</td>
-                                <td>Rp 3.000.000</td>
-                                <td>
-                                    <span class="material-symbols-outlined edit-icon">edit</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>UI/UX Design</td>
-                                <td>2 Bulan</td>
-                                <td>Menengah</td>
-                                <td>Rp 2.500.000</td>
-                                <td>
-                                    <span class="material-symbols-outlined edit-icon">edit</span>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Data Science Intensive</td>
-                                <td>4 Bulan</td>
-                                <td>Lanjutan</td>
-                                <td>Rp 4.500.000</td>
-                                <td>
-                                    <span class="material-symbols-outlined edit-icon">edit</span>
-                                </td>
-                            </tr>
+                        <tbody id="bootcampTableBody">
+                            <!-- Data akan dirender oleh JS -->
                         </tbody>
                     </table>
                 </div>
             </main>
         </div>
+
+        <!-- Modal -->
+        <div class="modal" id="bootcampModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <h2>Tambah Bootcamp</h2>
+
+                <form id="bootcampForm">
+                    <div class="form-group">
+                        <label for="title">Judul Program</label>
+                        <input type="text" id="title" name="title" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Harga</label>
+                        <input type="number" id="price" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Durasi</label>
+                        <input type="text" id="duration" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">Tingkat Kesulitan</label>
+                        <select id="level" required>
+                            <option value="">Pilih Tingkat</option>
+                            <option value="Dasar">Dasar</option>
+                            <option value="Menengah">Menengah</option>
+                            <option value="Lanjutan">Lanjutan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Jenis Pembelajaran</label>
+                        <input type="text" id="type" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="benefit">Benefit</label>
+                        <textarea id="benefit" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Deskripsi Program</label>
+                        <textarea id="description" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mentor">Mentor</label>
+                        <input type="text" id="mentor" required />
+                    </div>
+
+                    <button type="submit" class="btn-primary">Simpan</button>
+                </form>
+            </div>
+        </div>
+
+
+        <script src="./assets/js/script.js"></script>
     </body>
 
 </html>
